@@ -1,0 +1,32 @@
+Runtime:
+1) To figure out if a box of animal crackers contains an elephant, in the worst case you would have to check every cracker in the box until you either find or don’t find an elephant. So, the workload would be to perform one operation (or 2, if you consider pulling it from the box one operation and checking against “elephant” another operation) on every cracker (n), making this an O(n) algorithm.
+
+2) Runtimes from fastest to slowest:
+	•	O(1) - Constant
+	•	O(log n) - Logarithmic
+	•	O(n) - Linear
+	•	O(n log n) - Logarithmic
+	•	O(n^2) - Quadratic
+	•	O(2^n) - Exponential
+
+Stacks and Queues:
+1) Most appropriate data structures:
+	1.	A stack - this would be FILO, first items into the truck are the last out.
+	2.	A queue - this is FIFO, first bottles into the line are the first capped & out.
+	3.	Well, maybe a stack, since that would allow things in parenthesis to be evaluated first, and assuming the computer will then evaluate everything else in the usual order of operation…so, I guess stack + queue could be the answer - once parens are done, things on equal levels of operation are evaluated in queue order. (or, maybe use a tree with an algorithm that allows priority?).
+2) A queue works well for help queues (derp), but also for things like buffering/caching, so id you have to be getting rid of data, the “first in” data (oldest) is “first out” while “last in” data (newest) is always there, “last out”, and you can rewind to there without re-buffering or re-caching. If you want to keep a to-do list and remove the oldest things (first in) first, then this is also a good structure - like feeding in the steps of a recipe one-by-one and then giving them back to someone who is doing the cooking…you want them in that same order, first in first out! Or, you will be eating out…heehee.
+3) Stacks are great for “undoing”, or control-z, since you want to take out the last thing you put in! Also the back button on the browser. And, of course, our favorite error call stacks!
+
+Linked Lists
+1) There are three Node objects in this linked list, each of which consist of 2 attributes, shown in boxes: data & next. The node objects are represented by a box with data (“Apple”) + the next box, which points to the next node in the list (here “Berry”); this relationship is represented by an arrow (pointer) coming out of each next box. The parent Linked List object also contains an attribute: head. (Here the “LLIST” box looks like a “data” or “name attribute to me, but in lecture there was not a “data” attribute, only “head” is required? Hmm…is this then simply the name of the LinkedList instance but not an attribute??? unclear) and the head attribute points to the “Apple” node, which is therefore the head of the list. Finally, the tail of the list is currently “Cherry”, since the next attribute for the “Cherry” node points to “None”.
+2) In doubly-linked lists, each Node object of the list has an additional attribute, “previous”, pointing to the node prior to the current node; so, each node has “data”, “next” and “previous” attributes. Singly-linked lists nodes only know what comes next, while doubly-linked-list nodes know what came just before, plus what comes next.
+3) If your LinkedList object has no tail attribute, then you have to start at the head and check each node until you find the node with “None” as its next attribute, and append the item there - therefore, runtime is O(n). But if you add a “tail” object, you only have to check the pointer to the tail, add the new node there, and then update the tail pointer to point to the appended node - no matter how many items in the list, this operation only requires those 3 operations, so runtime is constant, O(1), yay!
+
+Trees:
+1) A BFS would check the following nodes in this order: food, Italian, Indian, Mexican, lasagna, pizza, tikka masala, saag, burritos.
+2) A DFS would check the following nodes in this order: food, Italian, lasagna, pizza, thin crust, Chicago-style.
+3) A binary search tree differs from a regular tree in that each node may only have at most 2 children, left and right, and the (pairs of) children must have a “rule” for their arrangement, such as smaller number on the left, or earlier in the alphabet on the left. Assuming the tree is well balanced, binary search trees can cut search runtimes from O(n) to O(log n) because you can cut “n” in half each time by ruling out everything to the left or right of each current node, as you transverse the tree.
+
+
+
+
